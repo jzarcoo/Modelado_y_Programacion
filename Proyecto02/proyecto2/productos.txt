@@ -1,0 +1,6 @@
+4	OsoDePeluche192	Oso de Peluche	Oso de peluche de 1.5m	50.00	5	Regalos
+4	Almohada122	Almohada de pato	Almohada de pato Donald	100.00	3	Regalos
+4	Audifonos92	Audifonos Bluetooth	Super utiles audifonos 	200.00	2	Tecnologia
+3	Peluche23	Peluche de pingüino	Peluche azul de 30 cm	100.00	1	Regalos
+3	Cable192	Cable usbc	Cable de 1m entrada usbc	70.00	7	Tecnologia
+3	Cobija91	Cobija azul	Cobija para dos personas	80.00	12	Dormir

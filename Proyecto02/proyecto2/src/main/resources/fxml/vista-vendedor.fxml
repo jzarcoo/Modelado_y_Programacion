@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" 
+            prefHeight="600.0" prefWidth="800.0" 
+            xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="mx.unam.ciencias.modelado.proyecto2.igu.ControladorVistaVendedor">
+   <children>
+        <Text fx:id="tempMaxText" layoutX="187.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: 'Arial Black'; -fx-font-size: 14px; -fx-fill: #333333;" text="| Temperatura maxima: |" />
+        <Text fx:id="tempMinText" layoutX="187.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: 'Arial Black'; -fx-font-size: 14px; -fx-fill: #333333;" text="| Temperatura minima: |" />
+        <Text fx:id="probPrepText" layoutX="187.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: 'Arial Black'; -fx-font-size: 14px; -fx-fill: #333333;" text="| Probabilidad de lluvia: |" />
+        <Text fx:id="cieloText" layoutX="186.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: 'Arial Black'; -fx-font-size: 18px; -fx-fill: #8b322c;" text="| Cielo: |" />
+      <AnchorPane prefHeight="608.0" prefWidth="164.0" style="-fx-background-color: #ffc470;">
+         <children>
+            <FontAwesomeIconView glyphName="USER" layoutX="61.0" layoutY="174.0" size="60" />
+            <Text fx:id="nombreUsuario" layoutX="26.0" layoutY="206.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre usuario"/>
+            <Line endX="100.0" layoutX="57.0" layoutY="227.0" startX="-49.5" stroke="#dd5746" />
+            <Button fx:id="botonVerInventario" onAction="#verInventario"
+                     layoutX="15.0" layoutY="244.0" mnemonicParsing="false" prefHeight="1.0" prefWidth="135.0" style="-fx-background-color: #dd5746;" text="Ver Inventario">
+               <graphic>
+                  <FontAwesomeIconView glyphName="BOOK" />
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="CLOSED_HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="botonVerCriticas" onAction="#verCriticas"
+                  layoutX="15.0" layoutY="294.0" mnemonicParsing="false" prefHeight="1.0" prefWidth="135.0" style="-fx-background-color: #dd5746;" text="Ver Criticas">
+               <graphic>
+                  <FontAwesomeIconView glyphName="BOOK" />
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="CLOSED_HAND" />
+               </cursor>
+            </Button>
+            <Button id="salir" layoutX="14.0" layoutY="561.0" mnemonicParsing="false" onAction="#cierraSesion" style="-fx-background-color: #ffc470;" text="Cerrar sesion">
+               <graphic>
+                  <FontAwesomeIconView glyphName="SIGN_OUT" text="" />
+               </graphic>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <cursor>
+                  <Cursor fx:constant="CLOSED_HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+   <children>
+            <ButtonBar AnchorPane.rightAnchor="10.0"
+                        AnchorPane.bottomAnchor="10.0" >
+               <buttons>
+                  <Button fx:id="botonAgregar"
+                     onAction="#agregaProducto"
+                     text="Agregar"
+                     prefWidth="120.0"
+                     defaultButton="true"
+                     style="-fx-background-color: #dd5746;">
+                        <cursor>
+                           <Cursor fx:constant="CLOSED_HAND" />
+                        </cursor>
+                  </Button>
+                  <Button fx:id="botonEditar"
+                        onAction="#editaProducto" text="Editar"
+                        prefWidth="120.0">
+                        <cursor>
+                           <Cursor fx:constant="CLOSED_HAND" />
+                        </cursor>
+                  </Button>
+                  <Button fx:id="botonEliminar"
+                        onAction="#eliminaProducto" text="Eliminar"
+                        prefWidth="120.0">
+                        <cursor>
+                           <Cursor fx:constant="CLOSED_HAND" />
+                        </cursor>
+                  </Button>
+                  <Button fx:id="botonBuscar"
+                        onAction="#buscaProductos" text="Buscar"
+                        prefWidth="120.0" 
+                        defaultButton="true"
+                        style="-fx-background-color: #dd5746;">
+                        <cursor>
+                           <Cursor fx:constant="CLOSED_HAND" />
+                        </cursor>
+                  </Button>
+               </buttons>
+            </ButtonBar>
+      </children>
+</AnchorPane>

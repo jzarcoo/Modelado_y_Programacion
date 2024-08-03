@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0"  xmlns:fx="http://javafx.com/fxml/1" fx:controller="mx.unam.ciencias.modelado.proyecto2.igu.ControladorVistaVerCompra">
+   <children>
+      <AnchorPane prefHeight="600.0" prefWidth="164.0" style="-fx-background-color: #ffc470;" xmlns="http://javafx.com/javafx/21">
+         <children>
+            <FontAwesomeIconView glyphName="USER" layoutX="61.0" layoutY="184.0" size="60" />
+            <Text fx:id="nombreUsuario" layoutX="32.0" layoutY="218.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre usuario" />
+            <Line endX="100.0" layoutX="57.0" layoutY="237.0" startX="-49.5" stroke="#dd5746" />
+            <Button id="salir" layoutX="14.0" layoutY="553.0" mnemonicParsing="false" onAction="#cierraSesion" style="-fx-background-color: #ffc470;" text="Cerrar sesion">
+               <graphic>
+                  <FontAwesomeIconView glyphName="SIGN_OUT" text="" />
+               </graphic>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <cursor>
+                  <Cursor fx:constant="CLOSED_HAND" />
+               </cursor>
+            </Button>
+         </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </AnchorPane>
+      <Button layoutX="633.0" layoutY="553.0" mnemonicParsing="false" onAction="#procedePago" prefHeight="33.0" prefWidth="151.0" style="-fx-background-color: #dd5746;" text="Terminar compra">
+         <graphic>
+            <FontAwesomeIconView glyphName="MONEY" />
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor>
+      </Button>
+   </children>
+</AnchorPane>

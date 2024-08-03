@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+							http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>mx.unam.ciencias.modelado.proyecto2</groupId>
+	<artifactId>proyecto</artifactId>
+	<version>modelado</version>
+	<packaging>jar</packaging>
+
+	<name>Proyecto 2</name>
+	<description>
+		Proyecto 2 de Modelado y Programacion.
+	</description>
+	<organization>
+		<name>Vaquitas Computitas</name>
+		<url>https://gitlab.com/marlop18/vaquitas-computitas.git</url>
+	</organization>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.release>11</maven.compiler.release>
+	</properties>
+
+	<build>
+		<plugins>
+
+		<!-- Politicas. Requiere estandares especificos -->
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-enforcer-plugin</artifactId>
+			<version>3.0.0-M3</version>
+			<executions>
+			<execution>
+				<id>enforce-maven</id>
+				<goals>
+				<goal>enforce</goal>
+				</goals>
+				<configuration>
+				<rules>
+					<requireMavenVersion>
+					<version>3.1.0</version>
+					</requireMavenVersion>
+				</rules>
+				</configuration>
+			</execution>
+			</executions>
+		</plugin>
+
+		<!-- Configuracion de la compilacion -->
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-compiler-plugin</artifactId>
+			<version>3.8.1</version>
+			<configuration>
+			<compilerArgument>-Xlint:deprecation</compilerArgument>
+			<compilerArgument>-Xlint:unchecked</compilerArgument>
+			<debug>true</debug>
+			<debuglevel>lines,vars,source</debuglevel>
+			<showDeprecation>true</showDeprecation>
+			<showWarnings>true</showWarnings>
+			</configuration>
+		</plugin>
+
+		<!-- Crea archivo JAR(Java Archive) -->
+		<plugin>
+		<groupId>org.apache.maven.plugins</groupId>
+		<artifactId>maven-jar-plugin</artifactId>
+			<version>3.2.0</version>
+		<configuration>
+		<archive>
+			<manifest>
+			<mainClass>mx.unam.ciencias.modelado.proyecto2.Proyecto2</mainClass>
+			</manifest>
+		</archive>
+		</configuration>
+		</plugin>
+
+		<!-- Genera documentacion -->
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-site-plugin</artifactId>
+			<version>3.9.1</version>
+		</plugin>
+
+		<!-- Informacion del proyecto -->
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-project-info-reports-plugin</artifactId>
+			<version>3.1.1</version>
+		</plugin>
+
+		</plugins>
+
+		<finalName>proyecto2</finalName>
+	</build>
+
+	<reporting>
+		<plugins>
+
+		<!-- Documentacion Javadoc -->
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-javadoc-plugin</artifactId>
+			<version>3.2.0</version>
+			<configuration>
+			<source>11</source>
+			<charset>UTF-8</charset>
+			<author>false</author>
+			<version>false</version>
+			<use>true</use>
+			<windowtitle>Modelado y Programacion.</windowtitle>
+			<doctitle><![CDATA[<h1>Modelado y Programacion.</h1>]]></doctitle>
+			</configuration>
+		</plugin>
+
+		<!-- Informe de pruebas unitarias -->
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-surefire-report-plugin</artifactId>
+			<version>3.0.0-M3</version>
+		</plugin>
+
+		<!-- Informes de representacion de codigo fuente en formato HTML -->
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-jxr-plugin</artifactId>
+			<version>3.0.0</version>
+		</plugin>
+
+		</plugins>
+	</reporting>
+
+	<dependencies>
+
+		<!-- iconos vectoriales de FontAwesome en aplicaciones JavaFX.  -->
+		<dependency>
+			<groupId>de.jensd</groupId>
+			<artifactId>fontawesomefx-fontawesome</artifactId>
+			<version>4.7.0-9.1.2</version> 
+		</dependency>
+
+
+		<!-- Biblioteca de JavaFX para controles de interfaz de usuario -->
+		<dependency>
+			<groupId>org.openjfx</groupId>
+			<artifactId>javafx-controls</artifactId>
+			<version>14</version>
+		</dependency>
+
+		<!-- Biblioteca de JavaFX para soporte FXML -->
+		<dependency>
+			<groupId>org.openjfx</groupId>
+			<artifactId>javafx-fxml</artifactId>
+			<version>14</version>
+		</dependency>
+
+		<!-- Biblioteca de JavaFX para soporte de graficos -->
+		<dependency>
+			<groupId>org.openjfx</groupId>
+			<artifactId>javafx-base</artifactId>
+			<version>14</version>
+			<scope>compile</scope>
+			<exclusions>
+				<exclusion>
+				<groupId>org.openjfx</groupId>
+				<artifactId>javafx.graphics</artifactId>
+				</exclusion>
+				<exclusion>
+				<groupId>org.openjfx</groupId>
+				<artifactId>javafx.fxml</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+
+		<!-- Biblioteca de pruebas unitarias -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.13.2</version>
+		</dependency>
+
+		<!-- Biblioteca de Jackson para manejo de JSON -->
+		<dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.16.0</version>
+        </dependency>
+		
+	</dependencies>
+
+</project>

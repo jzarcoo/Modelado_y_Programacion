@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" 
+            prefHeight="600.0" prefWidth="800.0" 
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="mx.unam.ciencias.modelado.proyecto2.igu.ControladorVistaAdministrador">
+   <children>
+        <Text fx:id="tempMaxText" layoutX="187.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: 'Arial Black'; -fx-font-size: 14px; -fx-fill: #333333;" text="| Temperatura maxima: |" />
+        <Text fx:id="tempMinText" layoutX="187.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: 'Arial Black'; -fx-font-size: 14px; -fx-fill: #333333;" text="| Temperatura minima: |" />
+        <Text fx:id="probPrepText" layoutX="187.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: 'Arial Black'; -fx-font-size: 14px; -fx-fill: #333333;" text="| Probabilidad de lluvia: |" />
+        <Text fx:id="cieloText" layoutX="186.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: 'Arial Black'; -fx-font-size: 18px; -fx-fill: #8b322c;" text="| Cielo: |" />
+      <AnchorPane prefHeight="600.0" prefWidth="164.0" style="-fx-background-color: #ffc470;">
+         <children>
+            <FontAwesomeIconView glyphName="USER" layoutX="61.0" layoutY="184.0" size="60" />
+            <Text fx:id="nombreUsuario" layoutX="12.0" layoutY="217.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre usuario" />
+            <Line endX="100.0" layoutX="57.0" layoutY="237.0" startX="-49.5" stroke="#dd5746" />
+            <Button id="salir" layoutX="14.0" layoutY="553.0" mnemonicParsing="false" onAction="#cierraSesion" style="-fx-background-color: #ffc470;" text="Cerrar sesion">
+               <graphic>
+                  <FontAwesomeIconView glyphName="SIGN_OUT" text="" />
+               </graphic>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <cursor>
+                  <Cursor fx:constant="CLOSED_HAND" />
+               </cursor>
+            </Button>
+         </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </AnchorPane>
+   </children>
+</AnchorPane>
